@@ -28,7 +28,7 @@ async function main() {
 		const credentialPath = path.join(crypto_materials, '/peerOrganizations/mhrd.certification-network.com/users/Admin@mhrd.certification-network.com');
 		const certificate = fs.readFileSync(path.join(credentialPath, '/msp/signcerts/Admin@mhrd.certification-network.com-cert.pem')).toString();
 		// IMPORTANT: Change the private key name to the key generated on your computer
-		const privatekey = fs.readFileSync(path.join(credentialPath, '/msp/keystore/6293f68e41e8550b43a28046a5a900b390e4cda3e452d3426e8562459a59cfb3_sk')).toString();
+		const privatekey = fs.readFileSync(path.join(credentialPath, process.env.PRIVATE_KEY)).toString();
 		
 		// Load credentials into wallet
 		const identityLabel = 'MHRD_ADMIN';
